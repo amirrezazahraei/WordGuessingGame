@@ -54,7 +54,7 @@ while True:
         print("rounds over sorry.")
         obj.setAsDefault()
 
-    if result == True:
+    if result is True:
         print("you won the game")
         obj.setAsDefault()
         get_data()
