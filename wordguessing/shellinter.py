@@ -7,7 +7,9 @@ print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 print("hello welcome")
 print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
-obj = DWGGame()
+try:
+    obj = DWGGame()
+except Exeption:
 
 lang = input("enter the language:"+str(obj.languages))
 obj.def_word(lang=lang)

@@ -21,6 +21,7 @@ class DWGGame(ChooseWord):
     len_word:int = 0
     __giveword:list = []
     __hardness:int = 0
+    GameModes = ['EASY', 'HARD', 'INTERMEDIATE']
     __left:int = 0 # this is used for counting down
 
     def __init__(self):
