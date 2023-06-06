@@ -29,8 +29,10 @@ def get_data():
         else:
             print("sorry an error occured")
 
+    obj.def_word(lang=lang)#the sequence here is really important because we need to first
+    # define the word and then based on it's length define the hardness
     obj.hardness = hardness
-    obj.def_word(lang=lang)
+    
 
 get_data()
 
@@ -40,9 +42,13 @@ while True:
     print(obj.left,"rounds left.")
     
     word = eval(input("enter the letters of the word you guess in list:"))
+    is_continue = input("enter any thing rather than 0 to continue:")
+    if is_continue == '0':
+        break
     obj.giveword = word
     result = obj.check()
     cl = obj.check_left()
+
 
     if cl:
         print("rounds over sorry.")

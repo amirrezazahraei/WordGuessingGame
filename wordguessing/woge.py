@@ -37,7 +37,6 @@ class DWGGame(ChooseWord):
             else:
                 self.pattern.append("x")
             self.__word.append(letter)
-
         self.len_word = len(self.__word)
 
     @property
@@ -58,7 +57,6 @@ class DWGGame(ChooseWord):
 
         else:
             raise ValueError("the givven input must be(HARD, INTERMEDIATE, EASY)")
-        
         self.__left = self.__hardness
 
     @property
