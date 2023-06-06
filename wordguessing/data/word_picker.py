@@ -13,7 +13,7 @@ class ChooseWord:
     paths:list
 
     def __init__(self):
-        self.languages, self.path = data.data_path_reader.open_file()# thiss p
+        self.languages, self.paths = data.data_path_reader.open_file()# thiss p
 
     def open_csv(self, path_index):
         """this method will open the csv. the path_index

@@ -61,7 +61,10 @@ class DWGGame(ChooseWord):
         
         self.__left = self.__hardness
 
-    
+    @property
+    def left(self):
+        return self.__left
+
     @property
     def giveword(self):
         return self.__giveword
@@ -80,7 +83,7 @@ class DWGGame(ChooseWord):
         self.__giveword = []
         self.__hardness = 0
         self.__left = 0
-        pattern = []
+        self.pattern = []
         self.len_word = 0
 
     def check_left(self):

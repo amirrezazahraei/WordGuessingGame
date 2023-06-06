@@ -1,6 +1,6 @@
 """this code will implement an  easy shell interface to use the 
 game"""
-
+import sys
 from woge import DWGGame
 
 print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
@@ -9,17 +9,36 @@ print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 try:
     obj = DWGGame()
-except Exeption:
 
-lang = input("enter the language:"+str(obj.languages))
-obj.def_word(lang=lang)
-hardness = input("enter the hardness:(HARD, INTERMEDIATE, EASY)")
-obj.hardness = hardness
+except Exception:
+    print("An error occurred while openning the data")
+    sys.exit()
 
-while (True):
+def get_data():
+    """this method will get the data from the user to start the game"""
+
+
+
+    while True:
+
+        lang = input("enter the language:"+str(obj.languages))
+        hardness = input("enter the hardness:(HARD, INTERMEDIATE, EASY)")
+
+        if lang in obj.languages and hardness in obj.GameModes:
+            break
+        else:
+            print("sorry an error occured")
+
+    obj.hardness = hardness
+    obj.def_word(lang=lang)
+
+get_data()
+
+while True:
 
     print(obj.pattern)
-
+    print(obj.left,"rounds left.")
+    
     word = eval(input("enter the letters of the word you guess in list:"))
     obj.giveword = word
     result = obj.check()
@@ -32,8 +51,7 @@ while (True):
     if result == True:
         print("you won the game")
         obj.setAsDefault()
-    
-
+        get_data()
 
 
 
